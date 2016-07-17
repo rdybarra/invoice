@@ -1,0 +1,47 @@
+.client-detail {
+  @extend %resource;
+
+  &__header {
+    @extend %resource__header;
+
+    &__controls {
+      @extend %resource__header__controls;
+
+      h1 {
+        margin-top: 0;
+      }
+
+      &__button {
+        @extend %resource__header__controls__button;
+
+        &--delete {
+          @extend %resource__header__controls__button--delete;
+        }
+      }
+
+      &__delete-form {
+        @extend %resource__header__controls__delete-form;
+      }
+    }
+
+    &__info {
+      @extend %resource__header__info;
+
+      &__item {
+        @extend %resource__header__info__item;
+
+        &__label {
+          @extend %resource__header__info__item__label;
+        }
+
+        &__value {
+          @extend %resource__header__info__item__value;
+        }
+      }
+    }
+  }
+
+  &__content {
+    @extend %resource__content;
+  }
+}

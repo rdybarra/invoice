@@ -1,0 +1,54 @@
+.nav {
+  @extend %nice-text;
+
+  &__item {
+    display: inline-block;
+    text-decoration: none;
+    color: $primaryNavColor;
+    margin-right: $gutter;
+    padding: $verticalPadding/2;
+    background-color: $navItemBgColor;
+    min-width: 25px;
+    height: 22px;
+    line-height: 22px;
+
+    &.active {
+      /* So that the arrow will show */
+      position: relative;
+
+      /* Triangle below */
+      &:after {
+        content:'';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 0;
+        height: 0;
+        border-top: solid 25px $navItemBgColor;
+        border-left: solid 45px transparent;
+        border-right: solid 45px transparent;
+      }
+    }
+
+    &:hover {
+      background-color: darken($navItemBgColor, 10%);
+
+      &:after {
+        border-top-color: darken($navItemBgColor, 10%);
+      }
+    }
+
+    &--settings {
+      @extend .nav__item;
+      @extend %settings;
+      font-size: inherit;
+      text-align: center;
+
+      /* Make the min width match the width of the bottom triangle */
+      min-width: calc(90px - #{$verticalPadding});
+    }
+
+  }
+}

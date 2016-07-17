@@ -1,0 +1,24 @@
+@import 'sticky-footer';
+
+.container {
+  @include container();
+  max-width: 1200px;
+  padding: 0 gutter(12);
+
+  &--with-padding {
+    @extend .container;
+    padding-top: (gutter(12) * 3);
+    padding-bottom: (gutter(12) * 3);
+  }
+}
+
+.print .container {
+  max-width: 670px;
+}
+
+#header {
+}
+
+#footer {
+  line-height: 3em;
+}

@@ -1,0 +1,75 @@
+%form-element {
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  display: inline-block;
+  padding: 0.5em;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 3px;
+  width: 100%;
+  max-width: 40em;
+
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+
+  &::placeholder {
+    @extend %nice-text;
+    color: $placeholderColor;
+  }
+}
+
+.field-prefix {
+  display: inline-block;
+  width: 1em;
+}
+
+.prefixed-field {
+  width: calc(100% - 1em) !important;
+  max-width: calc(40em - 1em) !important;
+}
+
+label {
+  position: relative;
+  top: 3px;
+  font-size: 0.8em;
+  @extend %nice-text;
+  display: block;
+}
+
+textarea,
+input[type="email"],
+input[type="number"],
+input[type="text"] {
+  @extend %form-element;
+}
+
+textarea {
+  width: calc(100% - 1em);
+}
+
+select {
+  @extend %form-element;
+  -webkit-appearance: menulist-button;
+  height: 3em;
+  background: none;
+  @extend %nice-text;
+
+  padding: $gutter/2;
+
+  &:active {
+    text-transform: none;
+  }
+
+  // For some browsers.
+  option {
+    padding: $gutter/2;
+    text-transform: none;
+  }
+}
+
+form {
+  button {
+    margin-top: $gutter;
+  }
+}

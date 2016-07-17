@@ -1,0 +1,17 @@
+.invoice-blocks {
+  @extend %blocks;
+
+  &--block {
+    @extend %block;
+
+    &--menu {
+      @extend %context-menu;
+    }
+
+    &--button__delete {
+      @extend %delete-button;
+      @extend %delete;
+    }
+  }
+}
+

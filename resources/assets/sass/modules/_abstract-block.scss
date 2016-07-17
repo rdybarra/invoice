@@ -1,0 +1,45 @@
+%blocks {
+  display: inline-flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+%block {
+  @extend %one-third;
+
+  display: block;
+  margin-bottom: $gutter;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+  /* Hide the h2 background from overlapping the edges. */
+  overflow: hidden;
+
+  /* Target the last element if it is the second item in the row */
+  &:nth-child(3n - 1):nth-last-child(1) {
+    margin-left: $gutter;
+    margin-right: auto;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0.25em 0.5em;
+    background-color: $primaryBlockHeaderBgColor;
+    color: $primaryBlockHeaderColor;
+    font-size: 1.3em;
+    font-weight: normal;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+  }
+
+  %context-menu {
+    padding: 0.25em 0.5em;
+  }
+}
+
+

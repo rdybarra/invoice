@@ -1,0 +1,41 @@
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  -webkit-print-color-adjust: exact;
+
+  th,
+  .table__cell {
+    border: 1px solid $mostlyTransparent;
+    min-height: 1em;
+    text-align: right;
+    padding: 0.4em;
+
+    &--label {
+      @extend .table__cell;
+      @extend %nice-text;
+      background-color: $bgColor1;
+    }
+
+    &--value {
+      @extend .table__cell;
+      font-weight: bold;
+      @extend %nice-text;
+      background-color: $bgColor1;
+    }
+
+    &--has-controls {
+      @extend .table__cell;
+      text-align: left;
+    }
+
+    &__control {
+      margin-left: 0.4em;
+    }
+  }
+
+  th {
+    @extend %nice-text;
+    background-color: $bgColor1;
+  }
+}

@@ -1,0 +1,24 @@
+/*
+ * Main colors
+ */
+body {
+  color: $color1;
+}
+
+#header {
+  background: $bgColor1;
+}
+
+#footer {
+  background: $bgColor2;
+  color: $color2;
+}
+
+button,
+.button {
+  @extend %button;
+}
+
+a {
+  color: $linkColor;
+}

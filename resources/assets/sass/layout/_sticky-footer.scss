@@ -1,0 +1,23 @@
+/*
+ * This technique for a sticky footer is taken from:
+ * http://www.themaninblue.com/writing/perspective/2005/08/29/
+ *
+ */
+
+html,
+body {
+  height: 100%;
+}
+
+#body-inner {
+  min-height: 100%;
+}
+
+main {
+  padding-bottom: 3em;
+}
+
+#footer {
+  height: 3em;
+  margin-top: -3em;
+}

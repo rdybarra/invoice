@@ -1,0 +1,15 @@
+$susy: (
+  columns: 12,
+  gutters: .25,
+  debug: (
+    image: hide
+  )
+);
+
+$sm-width: 768px;
+
+@mixin screen-sm {
+  @media (max-width: #{$sm-width}) {
+    @content;
+  }
+}

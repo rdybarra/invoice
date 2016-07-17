@@ -1,0 +1,15 @@
+@mixin column-width($cols) {
+  $totalGutterSpacing: ($cols - 1 * $gutter);
+  $gutterSpacingContribution: $totalGutterSpacing / $cols;
+
+  $marginlessWidth: 100%/$cols;
+  width: calc(#{$marginlessWidth} - #{$gutterSpacingContribution}});
+}
+
+%one-third {
+  @include column-width(3);
+
+  @include screen-sm {
+    @include column-width(1);
+  }
+}

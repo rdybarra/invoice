@@ -1,0 +1,165 @@
+%well {
+  padding: $gutter;
+  background-color: #eee;
+  border-radius: 5px;
+  margin: $gutter 0;
+  -webkit-print-color-adjust: exact;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.invoice {
+  &__header {
+    @include container;
+    h1 {
+      @include span(7 of 12);
+      margin-top: 0;
+    }
+
+    &__meta {
+      @include span(5 of 12 last);
+
+      &__item {
+        @include container;
+        border-bottom: 1px solid $mostlyTransparent;
+
+        &__label {
+          @include span(5 of 12);
+          @extend %nice-text;
+
+          &:after {
+            content: ': ';
+          }
+        }
+
+        &__value {
+          @include span(7 of 12 last);
+        }
+      }
+    }
+  }
+
+  &__line-items {
+    margin: $verticalPadding 0;
+
+    .new-line-item-row {
+      display: none;
+    }
+  }
+
+  &__payment-terms {
+    @extend %well;
+    font-size: 0.9em;
+  }
+
+  &__contact-info {
+    @extend %well;
+    background-color: #21c5f2;
+    color: #ffffff;
+    font-size: 0.8em;
+
+    &__item {
+      display: inline-block;
+      margin: 0 $gutter 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &__label {
+        @extend %nice-text;
+
+        &:after {
+          content: ': ';
+        }
+      }
+
+      &__value {
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  &--line-items-focus {
+    .invoice__contact-info,
+    .invoice__payment-terms,
+    .invoice__header {
+      opacity: 0.3;
+    }
+
+    .new-line-item-row {
+      display: table-row;
+    }
+  }
+}
+
+.line-item {
+  &__input {
+    display: none;
+  }
+
+  &__control--cancel,
+  &__control--delete,
+  &__control--edit {
+    margin-right: 0.4em;
+  }
+
+  &__control--update,
+  &__control--cancel {
+    display: none;
+  }
+}
+
+.print {
+  .invoice {
+    &__header {
+      h1 {
+      }
+
+      &__meta {
+        font-size: 0.75em;
+
+        &__item {
+          &__label {
+          }
+
+          &__value {
+          }
+        }
+      }
+    }
+
+    &__payment-terms {
+      font-size: 0.8em;
+    }
+
+    &__contact-info {
+      font-size: 0.7em;
+
+      &__item {
+        &__label {
+        }
+
+        &__value {
+        }
+      }
+
+    }
+  }
+}

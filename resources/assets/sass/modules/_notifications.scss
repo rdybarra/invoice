@@ -1,0 +1,24 @@
+.notification-box {
+  padding: $verticalPadding 0;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+
+  &--success {
+    @extend .notification-box;
+    background: $successColor;
+    color: $succcessPairColor;
+  }
+
+  &--error {
+    @extend .notification-box;
+    background: $dangerColor;
+    color: $succcessPairColor;
+  }
+}
+
+.container {
+  .notification-box {
+    padding: $gutter;
+    border-radius: 5px;
+    margin: $gutter 0;
+  }
+}

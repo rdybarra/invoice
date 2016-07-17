@@ -1,0 +1,47 @@
+%resource__header {
+  background: darken($bgColor1, 10%);
+  padding: $gutter*3 0 $gutter*3 0;
+
+  &__controls {
+    @include span(8 of 12);
+
+    h1 {
+      margin-top: 0;
+    }
+
+    &__button {
+      @extend %button;
+      display: inline-block;
+
+      &--delete {
+        @extend %button-danger;
+      }
+    }
+
+    &__delete-form {
+      display: inline-block;
+    }
+  }
+
+  &__info {
+    @include span(4 of 12 last);
+
+    &__item {
+      @include container;
+      border-bottom: 1px solid $mostlyTransparent;
+
+      &__label {
+        @include span(5 of 12);
+        @extend %nice-text;
+
+        &:after {
+          content: ': ';
+        }
+      }
+
+      &__value {
+        @include span(7 of 12 last);
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+%button {
+  @extend %nice-text;
+  border: 0;
+  padding: 0.5em 1em;
+  display: inline-block;
+  border: 2px solid transparent;
+  margin-right: 1em;
+  background: $primaryButtonBgColor;
+  color: $primaryButtonColor;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    border-color: $primaryButtonBgColor;
+    background-color: transparent;
+    color: $primaryButtonBgColor;
+    transition: all .5s ease;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+%button-danger {
+  @extend %button;
+  background: $dangerColor;
+
+  &:hover {
+    border-color: $dangerColor;
+    color: $dangerColor;
+  }
+}
+
+/*
+ * A delete button is a button wrapped in a form to create a "DELETE" HTTP
+ * request. We basically want to make it look like a normal link.
+ */
+%delete-button {
+  display: inline;
+  border: 0;
+  background: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    transition: none;
+    border: 0;
+    background: none;
+    color: inherit;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}

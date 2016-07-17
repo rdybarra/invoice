@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,700);
+
+$_brightBlue: #21c5f2;
+
+
+// Header
+$bgColor1: #eeeeee;
+$navItemBgColor: $bgColor1;
+
+// General colors
+$color1: #333333;
+$dangerColor: #f22e2e;
+
+// Footer
+$bgColor2: #333333;
+$color2: #ffffff;
+
+$mostlyTransparent: rgba(0,0,0,0.2);
+
+// Spacing
+$verticalPadding: 3em;
+$gutter: 1em;
+
+// Buttons
+$primaryButtonBgColor: #000000;
+$primaryButtonColor: #ffffff;
+
+
+// Blocks
+$primaryBlockHeaderBgColor: $_brightBlue;
+$primaryBlockHeaderColor: #ffffff;
+
+// Notifcations
+$successColor: #00ef43;
+$succcessPairColor: #ffffff;
+
+// Nav
+$primaryNavColor: #000000;
+
+// Type
+$headerFont: 'Dosis', sans-serif;
+
+// Form
+$placeholderColor: #7f7f7f;
+
+// Links
+$linkColor: darken($_brightBlue, 10%);
+
+/**
+ * Icons
+ */
+%icon {
+  @extend .fa;
+  font-size: 1.5em;
+}
+
+%delete {
+  @extend %icon;
+  @extend .fa-trash;
+}
+
+%settings {
+  @extend %icon;
+  @extend .fa-cog;
+}
