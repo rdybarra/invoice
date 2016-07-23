@@ -1,0 +1,11 @@
+.dashboard {
+  @include container();
+
+  &__primary {
+    @include span(8 of 12);
+  }
+
+  &__sidebar {
+    @include span(4 of 12 last);
+  }
+}

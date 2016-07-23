@@ -20,4 +20,15 @@ class Client extends Model
 
         parent::delete();
     }
+
+    public function lastInvoiceTime()
+    {
+        $lastInvoiceTime = 0;
+
+        foreach($this->invoices() as $invoice) {
+            $lastInvoiceTime = $invoice->update_at > $lastInvoiceTime ? $invoice->updated_at : $lastInvoiceTime;
+        }
+
+        return $lastInvoiceTime;
+    }
 }

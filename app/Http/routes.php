@@ -13,6 +13,8 @@
 use App\Client;
 use Illuminate\Http\Request;
 
+Route::get('/', 'DashboardController@index');
+
 Route::resource('clients', 'ClientController');
 
 Route::resource('invoices', 'InvoiceController');

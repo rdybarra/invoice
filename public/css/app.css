@@ -383,7 +383,7 @@ textarea {
   font-weight: normal;
   font-style: normal; }
 
-.fa, .client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .nav__item--settings {
+.fa, .client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .nav__item--icon--settings, .nav__item--icon--home {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -440,10 +440,10 @@ textarea {
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left, .fa-pull-left.client-blocks--block--button__delete, .fa-pull-left.invoice-blocks--block--button__delete, .fa-pull-left.nav__item--settings {
+.fa.fa-pull-left, .fa-pull-left.client-blocks--block--button__delete, .fa-pull-left.invoice-blocks--block--button__delete, .fa-pull-left.nav__item--icon--settings, .fa-pull-left.nav__item--icon--home {
   margin-right: .3em; }
 
-.fa.fa-pull-right, .fa-pull-right.client-blocks--block--button__delete, .fa-pull-right.invoice-blocks--block--button__delete, .fa-pull-right.nav__item--settings {
+.fa.fa-pull-right, .fa-pull-right.client-blocks--block--button__delete, .fa-pull-right.invoice-blocks--block--button__delete, .fa-pull-right.nav__item--icon--settings, .fa-pull-right.nav__item--icon--home {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -453,10 +453,10 @@ textarea {
 .pull-left {
   float: left; }
 
-.fa.pull-left, .pull-left.client-blocks--block--button__delete, .pull-left.invoice-blocks--block--button__delete, .pull-left.nav__item--settings {
+.fa.pull-left, .pull-left.client-blocks--block--button__delete, .pull-left.invoice-blocks--block--button__delete, .pull-left.nav__item--icon--settings, .pull-left.nav__item--icon--home {
   margin-right: .3em; }
 
-.fa.pull-right, .pull-right.client-blocks--block--button__delete, .pull-right.invoice-blocks--block--button__delete, .pull-right.nav__item--settings {
+.fa.pull-right, .pull-right.client-blocks--block--button__delete, .pull-right.invoice-blocks--block--button__delete, .pull-right.nav__item--icon--settings, .pull-right.nav__item--icon--home {
   margin-left: .3em; }
 
 .fa-spin {
@@ -582,13 +582,13 @@ textarea {
 
 .fa-gear:before,
 .fa-cog:before,
-.nav__item--settings:before {
+.nav__item--icon--settings:before {
   content: ""; }
 
 .fa-trash-o:before {
   content: ""; }
 
-.fa-home:before {
+.fa-home:before, .nav__item--icon--home:before {
   content: ""; }
 
 .fa-file-o:before {
@@ -2750,7 +2750,7 @@ textarea {
 /**
  * Icons
  */
-.client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .nav__item--settings {
+.client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .nav__item--icon--settings, .nav__item--icon--home {
   font-size: 1.5em; }
 
 h1,
@@ -3036,7 +3036,7 @@ button,
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 3em; }
 
-.nav__item, .nav__item--settings {
+.nav__item, .nav__item--icon, .nav__item--icon--settings, .nav__item--icon--home {
   display: inline-block;
   text-decoration: none;
   color: #000000;
@@ -3046,11 +3046,11 @@ button,
   min-width: 25px;
   height: 22px;
   line-height: 22px; }
-  .nav__item.active, .active.nav__item--settings {
+  .nav__item.active, .active.nav__item--icon, .active.nav__item--icon--settings, .active.nav__item--icon--home {
     /* So that the arrow will show */
     position: relative;
     /* Triangle below */ }
-    .nav__item.active:after, .active.nav__item--settings:after {
+    .nav__item.active:after, .active.nav__item--icon:after, .active.nav__item--icon--settings:after, .active.nav__item--icon--home:after {
       content: '';
       position: absolute;
       top: 100%;
@@ -3062,11 +3062,11 @@ button,
       border-top: solid 25px #eeeeee;
       border-left: solid 45px transparent;
       border-right: solid 45px transparent; }
-  .nav__item:hover, .nav__item--settings:hover {
+  .nav__item:hover, .nav__item--icon:hover, .nav__item--icon--settings:hover, .nav__item--icon--home:hover {
     background-color: #d5d5d5; }
-    .nav__item:hover:after, .nav__item--settings:hover:after {
+    .nav__item:hover:after, .nav__item--icon:hover:after, .nav__item--icon--settings:hover:after, .nav__item--icon--home:hover:after {
       border-top-color: #d5d5d5; }
-  .nav__item--settings {
+  .nav__item--icon, .nav__item--icon--settings, .nav__item--icon--home {
     font-size: inherit;
     text-align: center;
     /* Make the min width match the width of the bottom triangle */
@@ -3272,5 +3272,22 @@ form button {
 
 .client-detail__header__controls h1 {
   margin-top: 0; }
+
+.dashboard {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  .dashboard:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .dashboard__primary {
+    width: 66.1016949153%;
+    float: left;
+    margin-right: 1.6949152542%; }
+  .dashboard__sidebar {
+    width: 32.2033898305%;
+    float: right;
+    margin-right: 0; }
 
 /*# sourceMappingURL=app.css.map */

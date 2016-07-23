@@ -40,15 +40,24 @@
       }
     }
 
-    &--settings {
+    &--icon {
       @extend .nav__item;
-      @extend %settings;
+
       font-size: inherit;
       text-align: center;
 
       /* Make the min width match the width of the bottom triangle */
       min-width: calc(90px - #{$verticalPadding});
-    }
 
+      &--settings {
+        @extend .nav__item--icon;
+        @extend %settings;
+      }
+
+      &--home {
+        @extend .nav__item--icon;
+        @extend %home;
+      }
+    }
   }
 }

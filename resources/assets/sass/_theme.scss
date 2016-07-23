@@ -63,3 +63,8 @@ $linkColor: darken($_brightBlue, 10%);
   @extend %icon;
   @extend .fa-cog;
 }
+
+%home {
+  @extend %icon;
+  @extend .fa-home;
+}

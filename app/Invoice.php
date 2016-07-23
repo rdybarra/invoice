@@ -8,6 +8,17 @@ class Invoice extends Model
 {
     protected $fillable = ['name', 'client_id', 'description', 'delivery_status', 'payment_status', 'amount_paid', 'notes'];
 
+    public function scopeOutstanding($query)
+    {
+        return $query->where('payment_status', '!=', 'paid');
+    }
+
+    public function scopeWithPayments($query)
+    {
+        return $query->where('payment_status', '=', 'paid')
+                     ->orWhere('payment_status', '=', 'partial');
+    }
+
     public function client()
     {
         return $this->belongsTo('App\Client');
@@ -27,6 +38,19 @@ class Invoice extends Model
         }
 
         return $total;
+    }
+
+    public function amountDue()
+    {
+        $amountDue = 0;
+
+        if (!$this->payment_status || $this->payment_status == 'unpaid') {
+            $amountDue = $this->amount();
+        } else if ($this->payment_status == 'partial') {
+            $amountDue = $this->amount() - $this->amount_paid;
+        }
+
+        return $amountDue;
     }
 
     public function delete() {
