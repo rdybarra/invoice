@@ -6,7 +6,7 @@
     @else
       <a class="client-detail__header__controls__button" href="/clients/{{ $client->id }}/edit">Edit</a>
     @endif
-    <form class="client-detail__header__controls__delete-form" action="clients/{{ $client->id }}" method="POST">
+    <form class="client-detail__header__controls__delete-form" action="/clients/{{ $client->id }}" method="POST">
         {{ csrf_field() }}
         {{ method_field('DELETE') }}
 

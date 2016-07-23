@@ -383,7 +383,7 @@ textarea {
   font-weight: normal;
   font-style: normal; }
 
-.fa, .client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .nav__item--icon--settings, .nav__item--icon--home {
+.fa, .client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .payment-blocks--block--button__delete, .nav__item--icon--settings, .nav__item--icon--home {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -440,10 +440,10 @@ textarea {
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left, .fa-pull-left.client-blocks--block--button__delete, .fa-pull-left.invoice-blocks--block--button__delete, .fa-pull-left.nav__item--icon--settings, .fa-pull-left.nav__item--icon--home {
+.fa.fa-pull-left, .fa-pull-left.client-blocks--block--button__delete, .fa-pull-left.invoice-blocks--block--button__delete, .fa-pull-left.payment-blocks--block--button__delete, .fa-pull-left.nav__item--icon--settings, .fa-pull-left.nav__item--icon--home {
   margin-right: .3em; }
 
-.fa.fa-pull-right, .fa-pull-right.client-blocks--block--button__delete, .fa-pull-right.invoice-blocks--block--button__delete, .fa-pull-right.nav__item--icon--settings, .fa-pull-right.nav__item--icon--home {
+.fa.fa-pull-right, .fa-pull-right.client-blocks--block--button__delete, .fa-pull-right.invoice-blocks--block--button__delete, .fa-pull-right.payment-blocks--block--button__delete, .fa-pull-right.nav__item--icon--settings, .fa-pull-right.nav__item--icon--home {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -453,10 +453,10 @@ textarea {
 .pull-left {
   float: left; }
 
-.fa.pull-left, .pull-left.client-blocks--block--button__delete, .pull-left.invoice-blocks--block--button__delete, .pull-left.nav__item--icon--settings, .pull-left.nav__item--icon--home {
+.fa.pull-left, .pull-left.client-blocks--block--button__delete, .pull-left.invoice-blocks--block--button__delete, .pull-left.payment-blocks--block--button__delete, .pull-left.nav__item--icon--settings, .pull-left.nav__item--icon--home {
   margin-right: .3em; }
 
-.fa.pull-right, .pull-right.client-blocks--block--button__delete, .pull-right.invoice-blocks--block--button__delete, .pull-right.nav__item--icon--settings, .pull-right.nav__item--icon--home {
+.fa.pull-right, .pull-right.client-blocks--block--button__delete, .pull-right.invoice-blocks--block--button__delete, .pull-right.payment-blocks--block--button__delete, .pull-right.nav__item--icon--settings, .pull-right.nav__item--icon--home {
   margin-left: .3em; }
 
 .fa-spin {
@@ -1976,7 +1976,7 @@ textarea {
 .fa-bell-slash-o:before {
   content: ""; }
 
-.fa-trash:before, .client-blocks--block--button__delete:before, .invoice-blocks--block--button__delete:before {
+.fa-trash:before, .client-blocks--block--button__delete:before, .invoice-blocks--block--button__delete:before, .payment-blocks--block--button__delete:before {
   content: ""; }
 
 .fa-copyright:before {
@@ -2750,7 +2750,7 @@ textarea {
 /**
  * Icons
  */
-.client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .nav__item--icon--settings, .nav__item--icon--home {
+.client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .payment-blocks--block--button__delete, .nav__item--icon--settings, .nav__item--icon--home {
   font-size: 1.5em; }
 
 h1,
@@ -2759,7 +2759,8 @@ h3,
 h4,
 h5,
 h6, button,
-.button, .invoice-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea::-webkit-input-placeholder,
+.button, .invoice-detail__header__controls__button--delete, .payment-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .payment-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .payment-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea::-webkit-input-placeholder,
+input[type="date"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="number"]::-webkit-input-placeholder,
 input[type="text"]::-webkit-input-placeholder, select::-webkit-input-placeholder, label, select, .invoice__header__meta__item__label, .invoice__contact-info__item__label, .table th--label,
@@ -2774,7 +2775,8 @@ h3,
 h4,
 h5,
 h6, button,
-.button, .invoice-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea::-moz-placeholder,
+.button, .invoice-detail__header__controls__button--delete, .payment-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .payment-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .payment-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea::-moz-placeholder,
+input[type="date"]::-moz-placeholder,
 input[type="email"]::-moz-placeholder,
 input[type="number"]::-moz-placeholder,
 input[type="text"]::-moz-placeholder, select::-moz-placeholder, label, select, .invoice__header__meta__item__label, .invoice__contact-info__item__label, .table th--label,
@@ -2789,7 +2791,8 @@ h3,
 h4,
 h5,
 h6, button,
-.button, .invoice-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea:-ms-input-placeholder,
+.button, .invoice-detail__header__controls__button--delete, .payment-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .payment-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .payment-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea:-ms-input-placeholder,
+input[type="date"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 input[type="number"]:-ms-input-placeholder,
 input[type="text"]:-ms-input-placeholder, select:-ms-input-placeholder, label, select, .invoice__header__meta__item__label, .invoice__contact-info__item__label, .table th--label,
@@ -2804,7 +2807,8 @@ h3,
 h4,
 h5,
 h6, button,
-.button, .invoice-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea::placeholder,
+.button, .invoice-detail__header__controls__button--delete, .payment-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .payment-detail__header__controls__button, .client-detail__header__controls__button, .invoice-detail__header__info__item__label, .payment-detail__header__info__item__label, .client-detail__header__info__item__label, .none-yet, .nav, textarea::placeholder,
+input[type="date"]::placeholder,
 input[type="email"]::placeholder,
 input[type="number"]::placeholder,
 input[type="text"]::placeholder, select::placeholder, label, select, .invoice__header__meta__item__label, .invoice__contact-info__item__label, .table th--label,
@@ -2837,11 +2841,14 @@ body {
 a {
   color: #0ca9d4; }
 
-.client-blocks--block, .invoice-blocks--block {
+.client-blocks--block, .invoice-blocks--block, .payment-blocks--block {
   width: calc(33.3333333333% - 0.6666666667em); }
   @media (max-width: 768px) {
-    .client-blocks--block, .invoice-blocks--block {
+    .client-blocks--block, .invoice-blocks--block, .payment-blocks--block {
       width: calc(100% - 0em); } }
+
+.payment-context .payment-detail-client .client-blocks--block, .payment-context .payment-detail-client .invoice-blocks--block, .payment-context .payment-detail-client .payment-blocks--block, .payment-context .payment-detail-invoice .client-blocks--block, .payment-context .payment-detail-invoice .invoice-blocks--block, .payment-context .payment-detail-invoice .payment-blocks--block {
+  width: calc(100% - 0em); }
 
 /*
  * This technique for a sticky footer is taken from:
@@ -2882,7 +2889,7 @@ main {
 #footer {
   line-height: 3em; }
 
-.client-blocks, .invoice-blocks {
+.client-blocks, .invoice-blocks, .payment-blocks {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-pack: justify;
@@ -2893,32 +2900,32 @@ main {
   flex-wrap: wrap;
   width: 100%; }
 
-.client-blocks--block, .invoice-blocks--block {
+.client-blocks--block, .invoice-blocks--block, .payment-blocks--block {
   display: block;
   margin-bottom: 1em;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   /* Hide the h2 background from overlapping the edges. */
   overflow: hidden;
   /* Target the last element if it is the second item in the row */ }
-  .client-blocks--block:nth-child(3n - 1):nth-last-child(1), .invoice-blocks--block:nth-child(3n - 1):nth-last-child(1) {
+  .client-blocks--block:nth-child(3n - 1):nth-last-child(1), .invoice-blocks--block:nth-child(3n - 1):nth-last-child(1), .payment-blocks--block:nth-child(3n - 1):nth-last-child(1) {
     margin-left: 1em;
     margin-right: auto; }
-  .client-blocks--block h2, .invoice-blocks--block h2 {
+  .client-blocks--block h2, .invoice-blocks--block h2, .payment-blocks--block h2 {
     margin: 0;
     padding: 0.25em 0.5em;
     background-color: #21c5f2;
     color: #ffffff;
     font-size: 1.3em;
     font-weight: normal; }
-    .client-blocks--block h2 a, .invoice-blocks--block h2 a {
+    .client-blocks--block h2 a, .invoice-blocks--block h2 a, .payment-blocks--block h2 a {
       text-decoration: none;
       color: inherit;
       display: block; }
-  .client-blocks--block .client-blocks--block--menu, .invoice-blocks--block .client-blocks--block--menu, .client-blocks--block .invoice-blocks--block--menu, .invoice-blocks--block .invoice-blocks--block--menu {
+  .client-blocks--block .client-blocks--block--menu, .invoice-blocks--block .client-blocks--block--menu, .payment-blocks--block .client-blocks--block--menu, .client-blocks--block .invoice-blocks--block--menu, .invoice-blocks--block .invoice-blocks--block--menu, .payment-blocks--block .invoice-blocks--block--menu, .client-blocks--block .payment-blocks--block--menu, .invoice-blocks--block .payment-blocks--block--menu, .payment-blocks--block .payment-blocks--block--menu {
     padding: 0.25em 0.5em; }
 
 button,
-.button, .invoice-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .client-detail__header__controls__button {
+.button, .invoice-detail__header__controls__button--delete, .payment-detail__header__controls__button--delete, .client-detail__header__controls__button--delete, .invoice-detail__header__controls__button, .payment-detail__header__controls__button, .client-detail__header__controls__button {
   border: 0;
   padding: 0.5em 1em;
   display: inline-block;
@@ -2929,18 +2936,18 @@ button,
   cursor: pointer;
   text-decoration: none; }
   button:hover,
-  .button:hover, .invoice-detail__header__controls__button--delete:hover, .client-detail__header__controls__button--delete:hover, .invoice-detail__header__controls__button:hover, .client-detail__header__controls__button:hover {
+  .button:hover, .invoice-detail__header__controls__button--delete:hover, .payment-detail__header__controls__button--delete:hover, .client-detail__header__controls__button--delete:hover, .invoice-detail__header__controls__button:hover, .payment-detail__header__controls__button:hover, .client-detail__header__controls__button:hover {
     border-color: #000000;
     background-color: transparent;
     color: #000000;
     transition: all .5s ease; }
   button:focus,
-  .button:focus, .invoice-detail__header__controls__button--delete:focus, .client-detail__header__controls__button--delete:focus, .invoice-detail__header__controls__button:focus, .client-detail__header__controls__button:focus {
+  .button:focus, .invoice-detail__header__controls__button--delete:focus, .payment-detail__header__controls__button--delete:focus, .client-detail__header__controls__button--delete:focus, .invoice-detail__header__controls__button:focus, .payment-detail__header__controls__button:focus, .client-detail__header__controls__button:focus {
     outline: 0; }
 
-.invoice-detail__header__controls__button--delete, .client-detail__header__controls__button--delete {
+.invoice-detail__header__controls__button--delete, .payment-detail__header__controls__button--delete, .client-detail__header__controls__button--delete {
   background: #f22e2e; }
-  .invoice-detail__header__controls__button--delete:hover, .client-detail__header__controls__button--delete:hover {
+  .invoice-detail__header__controls__button--delete:hover, .payment-detail__header__controls__button--delete:hover, .client-detail__header__controls__button--delete:hover {
     border-color: #f22e2e;
     color: #f22e2e; }
 
@@ -2948,68 +2955,68 @@ button,
  * A delete button is a button wrapped in a form to create a "DELETE" HTTP
  * request. We basically want to make it look like a normal link.
  */
-.client-blocks--block--button__delete, .invoice-blocks--block--button__delete {
+.client-blocks--block--button__delete, .invoice-blocks--block--button__delete, .payment-blocks--block--button__delete {
   display: inline;
   border: 0;
   background: none;
   color: inherit;
   padding: 0;
   margin: 0; }
-  .client-blocks--block--button__delete:hover, .invoice-blocks--block--button__delete:hover {
+  .client-blocks--block--button__delete:hover, .invoice-blocks--block--button__delete:hover, .payment-blocks--block--button__delete:hover {
     transition: none;
     border: 0;
     background: none;
     color: inherit; }
-  .client-blocks--block--button__delete:focus, .invoice-blocks--block--button__delete:focus {
+  .client-blocks--block--button__delete:focus, .invoice-blocks--block--button__delete:focus, .payment-blocks--block--button__delete:focus {
     outline: 0; }
 
-.invoice-detail, .client-detail {
+.invoice-detail, .payment-detail, .client-detail {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto; }
-  .invoice-detail:after, .client-detail:after {
+  .invoice-detail:after, .payment-detail:after, .client-detail:after {
     content: " ";
     display: block;
     clear: both; }
 
-.invoice-detail__header, .client-detail__header {
+.invoice-detail__header, .payment-detail__header, .client-detail__header {
   background: #d5d5d5;
   padding: 3em 0 3em 0; }
-  .invoice-detail__header__controls, .client-detail__header__controls {
+  .invoice-detail__header__controls, .payment-detail__header__controls, .client-detail__header__controls {
     width: 66.1016949153%;
     float: left;
     margin-right: 1.6949152542%; }
-    .invoice-detail__header__controls h1, .client-detail__header__controls h1 {
+    .invoice-detail__header__controls h1, .payment-detail__header__controls h1, .client-detail__header__controls h1 {
       margin-top: 0; }
-    .invoice-detail__header__controls__button, .client-detail__header__controls__button {
+    .invoice-detail__header__controls__button, .payment-detail__header__controls__button, .client-detail__header__controls__button {
       display: inline-block; }
-    .invoice-detail__header__controls__delete-form, .client-detail__header__controls__delete-form {
+    .invoice-detail__header__controls__delete-form, .payment-detail__header__controls__delete-form, .client-detail__header__controls__delete-form {
       display: inline-block; }
-  .invoice-detail__header__info, .client-detail__header__info {
+  .invoice-detail__header__info, .payment-detail__header__info, .client-detail__header__info {
     width: 32.2033898305%;
     float: right;
     margin-right: 0; }
-    .invoice-detail__header__info__item, .client-detail__header__info__item {
+    .invoice-detail__header__info__item, .payment-detail__header__info__item, .client-detail__header__info__item {
       max-width: 100%;
       margin-left: auto;
       margin-right: auto;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-      .invoice-detail__header__info__item:after, .client-detail__header__info__item:after {
+      .invoice-detail__header__info__item:after, .payment-detail__header__info__item:after, .client-detail__header__info__item:after {
         content: " ";
         display: block;
         clear: both; }
-      .invoice-detail__header__info__item__label, .client-detail__header__info__item__label {
+      .invoice-detail__header__info__item__label, .payment-detail__header__info__item__label, .client-detail__header__info__item__label {
         width: 40.6779661017%;
         float: left;
         margin-right: 1.6949152542%; }
-        .invoice-detail__header__info__item__label:after, .client-detail__header__info__item__label:after {
+        .invoice-detail__header__info__item__label:after, .payment-detail__header__info__item__label:after, .client-detail__header__info__item__label:after {
           content: ': '; }
-      .invoice-detail__header__info__item__value, .client-detail__header__info__item__value {
+      .invoice-detail__header__info__item__value, .payment-detail__header__info__item__value, .client-detail__header__info__item__value {
         width: 57.6271186441%;
         float: right;
         margin-right: 0; }
 
-.invoice-detail__content, .client-detail__content {
+.invoice-detail__content, .payment-detail__content, .client-detail__content {
   padding: 3em 0; }
 
 .none-yet {
@@ -3073,6 +3080,7 @@ button,
     min-width: calc(90px - 3em); }
 
 textarea,
+input[type="date"],
 input[type="email"],
 input[type="number"],
 input[type="text"], select {
@@ -3085,29 +3093,35 @@ input[type="text"], select {
   width: 100%;
   max-width: 40em; }
   textarea:active,
+  input[type="date"]:active,
   input[type="email"]:active,
   input[type="number"]:active,
   input[type="text"]:active, select:active, textarea:focus,
+  input[type="date"]:focus,
   input[type="email"]:focus,
   input[type="number"]:focus,
   input[type="text"]:focus, select:focus {
     outline: 0; }
   textarea::-webkit-input-placeholder,
+  input[type="date"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder,
   input[type="number"]::-webkit-input-placeholder,
   input[type="text"]::-webkit-input-placeholder, select::-webkit-input-placeholder {
     color: #7f7f7f; }
   textarea::-moz-placeholder,
+  input[type="date"]::-moz-placeholder,
   input[type="email"]::-moz-placeholder,
   input[type="number"]::-moz-placeholder,
   input[type="text"]::-moz-placeholder, select::-moz-placeholder {
     color: #7f7f7f; }
   textarea:-ms-input-placeholder,
+  input[type="date"]:-ms-input-placeholder,
   input[type="email"]:-ms-input-placeholder,
   input[type="number"]:-ms-input-placeholder,
   input[type="text"]:-ms-input-placeholder, select:-ms-input-placeholder {
     color: #7f7f7f; }
   textarea::placeholder,
+  input[type="date"]::placeholder,
   input[type="email"]::placeholder,
   input[type="number"]::placeholder,
   input[type="text"]::placeholder, select::placeholder {
@@ -3242,6 +3256,26 @@ form button {
 
 .invoice-detail__header__controls h1 {
   margin-top: 0; }
+
+.payment-detail__header__controls h1 {
+  margin-top: 0; }
+
+.payment-context {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  .payment-context:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .payment-context .payment-detail-client {
+    width: 49.1525423729%;
+    float: left;
+    margin-right: 1.6949152542%; }
+  .payment-context .payment-detail-invoice {
+    width: 49.1525423729%;
+    float: right;
+    margin-right: 0; }
 
 .table {
   table-layout: fixed;

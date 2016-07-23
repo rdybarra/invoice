@@ -3,7 +3,7 @@
   $gutterSpacingContribution: $totalGutterSpacing / $cols;
 
   $marginlessWidth: 100%/$cols;
-  width: calc(#{$marginlessWidth} - #{$gutterSpacingContribution}});
+  width: calc(#{$marginlessWidth} - #{$gutterSpacingContribution});
 }
 
 %one-third {
@@ -12,4 +12,8 @@
   @include screen-sm {
     @include column-width(1);
   }
+}
+
+%whole {
+  @include column-width(1);
 }

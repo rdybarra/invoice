@@ -22,5 +22,7 @@ Route::resource('invoices/{invoiceId}/line-items', 'LineItemController');
 Route::get('invoices/{invoiceId}/line-items/{id}/delete', 'LineItemController@destroy');
 Route::get('invoices/{id}/print', 'InvoiceController@print');
 
+Route::resource('payments', 'PaymentController');
+
 Route::get('settings', 'SettingGroupController@edit');
 Route::put('settings', 'SettingGroupController@update');
