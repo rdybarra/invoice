@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Input;
 
 class ClientController extends Controller
 {
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $clients = Client::orderBy('created_at', 'asc')->get();
 
         return view('clients/index', [
@@ -17,7 +18,8 @@ class ClientController extends Controller
         ]);
     }
 
-    public function show(Request $request, $id) {
+    public function show(Request $request, $id)
+    {
         $client = Client::find($id);
 
         return view('clients/show', [
@@ -26,7 +28,8 @@ class ClientController extends Controller
         ]);
     }
 
-    public function edit(Request $request, $id) {
+    public function edit(Request $request, $id)
+    {
         $client = Client::find($id);
 
         return view('clients/edit', [
@@ -34,7 +37,8 @@ class ClientController extends Controller
         ]);
     }
 
-    public function create(Request $request) {
+    public function create(Request $request)
+    {
         $client = new Client();
 
         return view('clients/create', [
@@ -42,7 +46,8 @@ class ClientController extends Controller
         ]);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required|max:255',
         ]);
@@ -54,7 +59,8 @@ class ClientController extends Controller
         return redirect('/clients');
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $this->validate($request, [
             'name' => 'required|max:255',
         ]);
@@ -67,7 +73,8 @@ class ClientController extends Controller
         return redirect('/clients/' . $client->id);
     }
 
-    public function destroy(Request $request, $id) {
+    public function destroy(Request $request, $id)
+    {
         $client = Client::find($id);
         $client->delete();
 

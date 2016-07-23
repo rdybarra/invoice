@@ -13,8 +13,9 @@ class Client extends Model
         return $this->hasMany('App\Invoice');
     }
 
-    public function delete() {
-        foreach($this->invoices as $invoice) {
+    public function delete()
+    {
+        foreach ($this->invoices as $invoice) {
             $invoice->delete();
         }
 
@@ -25,7 +26,7 @@ class Client extends Model
     {
         $lastInvoiceTime = 0;
 
-        foreach($this->invoices() as $invoice) {
+        foreach ($this->invoices() as $invoice) {
             $lastInvoiceTime = $invoice->update_at > $lastInvoiceTime ? $invoice->updated_at : $lastInvoiceTime;
         }
 

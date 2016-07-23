@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Input;
 
 class InvoiceController extends Controller
 {
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $invoices = Invoice::orderBy('created_at', 'asc')->get();
 
         return view('invoices/index', [
@@ -19,7 +20,8 @@ class InvoiceController extends Controller
         ]);
     }
 
-    public function create(Request $request) {
+    public function create(Request $request)
+    {
         $invoice = new Invoice();
         $clients = Client::orderBy('name', 'asc')->get();
 
@@ -29,7 +31,8 @@ class InvoiceController extends Controller
         ]);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required|max:255'
         ]);
@@ -41,7 +44,8 @@ class InvoiceController extends Controller
         return redirect('/invoices');
     }
 
-    public function show(Request $request, $id) {
+    public function show(Request $request, $id)
+    {
         $invoice = Invoice::find($id);
 
         return view('invoices/show', [
@@ -49,7 +53,8 @@ class InvoiceController extends Controller
         ]);
     }
 
-    public function print(Request $request, $id) {
+    public function print(Request $request, $id)
+    {
         $invoice = Invoice::find($id);
 
         return view('invoices/print', [
@@ -57,7 +62,8 @@ class InvoiceController extends Controller
         ]);
     }
 
-    public function edit(Request $request, $id) {
+    public function edit(Request $request, $id)
+    {
         $invoice = Invoice::find($id);
         $clients = Client::orderBy('name', 'asc')->get();
 
@@ -67,7 +73,8 @@ class InvoiceController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         $this->validate($request, [
             'name' => 'required|max:255'
         ]);
@@ -80,7 +87,8 @@ class InvoiceController extends Controller
         return redirect('/invoices/' . $id);
     }
 
-    public function destroy(Request $request, $id) {
+    public function destroy(Request $request, $id)
+    {
         $invoice = Invoice::find($id);
         $invoice->delete();
 

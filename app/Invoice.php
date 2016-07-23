@@ -33,8 +33,8 @@ class Invoice extends Model
     {
         $total = 0;
 
-        foreach($this->line_items as $lineItem) {
-          $total += $lineItem->total();
+        foreach ($this->line_items as $lineItem) {
+            $total += $lineItem->total();
         }
 
         return $total;
@@ -46,15 +46,16 @@ class Invoice extends Model
 
         if (!$this->payment_status || $this->payment_status == 'unpaid') {
             $amountDue = $this->amount();
-        } else if ($this->payment_status == 'partial') {
+        } elseif ($this->payment_status == 'partial') {
             $amountDue = $this->amount() - $this->amount_paid;
         }
 
         return $amountDue;
     }
 
-    public function delete() {
-        foreach($this->line_items as $lineItem) {
+    public function delete()
+    {
+        foreach ($this->line_items as $lineItem) {
             $lineItem->delete();
         }
 

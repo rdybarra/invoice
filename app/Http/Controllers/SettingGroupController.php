@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Input;
 
 class SettingGroupController extends Controller
 {
-    public function edit(Request $request) {
+    public function edit(Request $request)
+    {
         $settingGroup = SettingGroup::first();
 
         return view('settings/edit', [
@@ -16,7 +17,8 @@ class SettingGroupController extends Controller
         ]);
     }
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $settingGroup = SettingGroup::first();
 
         $settingGroup->update(Input::all());

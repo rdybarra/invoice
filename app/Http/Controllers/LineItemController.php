@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Input;
 
 class LineItemController extends Controller
 {
-    public function index(Request $request, $id) {
+    public function index(Request $request, $id)
+    {
         $invoice = Invoice::find($id);
 
         return view('line_items/manage', [
@@ -19,7 +20,8 @@ class LineItemController extends Controller
         ]);
     }
 
-    public function store(Request $request, $id) {
+    public function store(Request $request, $id)
+    {
         $this->validate($request, [
             'description' => 'required|max:255'
         ]);
@@ -31,7 +33,8 @@ class LineItemController extends Controller
         return redirect('/invoices/' . $id . '/line-items#line-items');
     }
 
-    public function update(Request $request, $invoiceId, $id) {
+    public function update(Request $request, $invoiceId, $id)
+    {
         $this->validate($request, [
             'description' => 'required|max:255'
         ]);
@@ -44,7 +47,8 @@ class LineItemController extends Controller
         return redirect('/invoices/' . $invoiceId . '/line-items#line-items');
     }
 
-    public function destroy(Request $request, $invoiceId, $id) {
+    public function destroy(Request $request, $invoiceId, $id)
+    {
         $lineItem = LineItem::find($id);
         $lineItem->delete();
 

@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['settings.edit', 'invoices.partials.invoice-header', 'invoices.partials.invoice-footer'], function($view)
-        {
+        View::composer(['settings.edit', 'invoices.partials.invoice-header', 'invoices.partials.invoice-footer'], function ($view) {
+        
             $view->with('settings', SettingGroup::first());
         });
     }
