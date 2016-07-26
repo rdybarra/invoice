@@ -7,15 +7,25 @@ use Illuminate\Support\Facades\Input;
 use App\Client;
 use App\Invoice;
 use App\Payment;
+use Carbon\Carbon;
+use DB;
 
 class PaymentController extends Controller
 {
     public function index(Request $request)
     {
-        $payments = Payment::orderBy('created_at', 'asc')->get();
+        $selectedYear = $request->input('year') ? $request->input('year') : date('Y');
+        $payments = $this->paymentsForYear($selectedYear);
+        $paymentsByMonth = $this->paymentsByMonthForYear($selectedYear);
+        $sumsPerMonth = $this->getSumsPerMonth($paymentsByMonth);
 
         return view('payments/index', [
-            'payments' => $payments
+            'payments' => $payments,
+            'yearsWithPayments' => $this->getYearsWithPayments(),
+            'selectedYear' => $selectedYear,
+            'monthIndexes' => $this->getMonthIndexesForYear($selectedYear),
+            'paymentsByMonth' => $paymentsByMonth,
+            'sumsPerMonth' => $sumsPerMonth
         ]);
     }
 
@@ -91,5 +101,68 @@ class PaymentController extends Controller
             'Venmo',
             'Gusto'
         ];
+    }
+
+    private function paymentsForYear($year)
+    {
+        return Payment::orderBy('created_at', 'asc')->whereYear('date', '=', $year)->get();
+    }
+
+    private function paymentsByMonthForYear($year)
+    {
+        return $this->paymentsForYear($year)->groupBy(function ($item) {
+            $carbonDate = new Carbon($item->date);
+            return $carbonDate->format('F');
+        });
+    }
+
+    private function getSumsPerMonth($collection)
+    {
+        $sumsPerMonth = [];
+
+        foreach ($collection as $key => $item) {
+            $sumsPerMonth[$key] = $item->sum('amount');
+        }
+
+        return $sumsPerMonth;
+    }
+
+    private function getMonthIndexesForYear($year)
+    {
+        $year = $year ? $year : date('Y');
+        $mostRecentMonthNumber = ($year == date('Y')) ? date('n') : 12;
+        $reportStartDate = $mostRecentMonthNumber . '/' . '01' . '/' .  $year;
+
+        $monthIndexes = [];
+
+        for ($i = 0; $i < $mostRecentMonthNumber; $i++) {
+            $indexDate = new Carbon($reportStartDate . ' -' . $i . ' months');
+
+            array_push($monthIndexes, $this->formatMonthIndex($indexDate));
+        }
+
+        return $monthIndexes;
+    }
+
+    private function formatMonthIndex(Carbon $carbonDate)
+    {
+        return $carbonDate->format('F');
+    }
+
+    private function getYearsWithPayments()
+    {
+        $years = [];
+
+        $payments = Payment::orderBy('created_at', 'asc')->groupBy(DB::raw('YEAR(date)'))->get();
+        $dates = $payments->pluck('date');
+
+        foreach ($dates as $date) {
+            $carbonDate = new Carbon($date);
+            $year = $carbonDate->format('Y');
+
+            array_push($years, $year);
+        }
+
+        return $years;
     }
 }
